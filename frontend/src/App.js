@@ -52,7 +52,6 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.addEventListener("contextmenu", (e) => e.preventDefault());
     webFont.load({
       google: {
         families: ["Roboto", "Droid sans ", "chilanka"],
