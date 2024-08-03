@@ -75,7 +75,7 @@ exports.forgotpassword = catchasyncerrors(async (req, res, next) => {
   //get resetpassword token
   const resettoken = user.getresetpasswordtoken();
   await user.save({ validateBeforeSave: false });
-  const resetpasswordurl = `http://localhost:3000/password/reset/${resettoken}`;
+  const resetpasswordurl = `https://mern-ecommerce-website-psi.vercel.app/password/reset/${resettoken}`;
 
   const message = `your password reset token is :-\n\n${resetpasswordurl}  \n\n if you have not requested this url then,please ignore it.`;
   try {

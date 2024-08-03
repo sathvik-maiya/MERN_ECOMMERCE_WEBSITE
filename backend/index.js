@@ -22,8 +22,8 @@ app.use(
 app.use(fileupload({ limit: "50mb" }));
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"], 
+    origin: ["https://mern-ecommerce-website-psi.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
