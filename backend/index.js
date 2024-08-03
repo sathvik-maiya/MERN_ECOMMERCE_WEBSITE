@@ -4,6 +4,7 @@ const cookieparser = require("cookie-parser");
 const bodyparser = require("body-parser");
 const fileupload = require("express-fileupload");
 const errormiddleware = require("./middleware/error");
+const cors = require("cors");
 
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -19,6 +20,13 @@ app.use(
   })
 );
 app.use(fileupload({ limit: "50mb" }));
+app.use(
+  cors({
+    origin: ["https://mern-ecommerce-website-eta.vercel.app/"],
+    methods: ["*"],
+    credentials: true,
+  })
+);
 
 //route imports
 const product = require("./routes/productroute");
