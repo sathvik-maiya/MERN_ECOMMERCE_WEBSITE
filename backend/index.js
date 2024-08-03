@@ -5,6 +5,7 @@ const bodyparser = require("body-parser");
 const fileupload = require("express-fileupload");
 const errormiddleware = require("./middleware/error");
 const cors = require("cors");
+const path = require("path");
 
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -46,6 +47,12 @@ app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build/index.html"));
+});
 
 // middleware for error
 app.use(errormiddleware);
