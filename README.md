@@ -6,7 +6,7 @@ SATHVIK V MAIYA
 
 # Install Dependencies
 
-**For Backend** - `cd backend npm i`
+**For Backend** - `cd backend` `npm i`
 
 **For Frontend** - `cd frontend` `npm i`
 
