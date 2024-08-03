@@ -19,6 +19,9 @@ import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { createOrder, clearerrors } from "../../actions/orderAction";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+axios.defaults.withCredentials = true;
+
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   const dispatch = useDispatch();
@@ -58,7 +61,7 @@ const Payment = () => {
       };
 
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        `${API_BASE_URL}/api/v1/payment/process`,
         paymentData,
         config
       );

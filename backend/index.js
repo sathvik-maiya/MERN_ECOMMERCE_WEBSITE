@@ -22,8 +22,9 @@ app.use(
 app.use(fileupload({ limit: "50mb" }));
 app.use(
   cors({
-    origin: ["https://mern-ecommerce-website-eta.vercel.app/"],
-    methods: ["*"],
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"], 
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
