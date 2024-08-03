@@ -25,7 +25,6 @@ app.use(
   cors({
     origin: ["https://mern-ecommerce-website-psi.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, 
   })
 );
@@ -33,7 +32,6 @@ app.use(
 app.options('*', cors({
   origin: ["https://mern-ecommerce-website-psi.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
